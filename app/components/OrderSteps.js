@@ -26,13 +26,13 @@ const steps = [
 
 export default function OrderSteps() {
   return (
-    <section id="order" className="bg-cream py-24 md:py-28">
-      <div className="mx-auto max-w-content px-6">
-        <Reveal className="mb-20">
+    <section id="order" className="bg-cream py-16 md:py-24 lg:py-28">
+      <div className="mx-auto max-w-content px-4 sm:px-6">
+        <Reveal className="mb-12 md:mb-20">
           <SectionHeading kicker="The experience" title="How It Works" />
         </Reveal>
 
-        <div className="relative grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-8">
+        <div className="relative grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-8">
           <div
             className="absolute left-[12.5%] right-[12.5%] top-7 hidden h-px bg-navy/10 md:block"
             aria-hidden="true"
@@ -41,7 +41,7 @@ export default function OrderSteps() {
           {steps.map((step, i) => (
             <Reveal key={step.title} delay={i * 100}>
               <div className="relative z-10 flex flex-col items-center bg-cream px-2 text-center">
-                <span className="mb-6 block font-display text-4xl italic text-gold">
+                <span className="mb-4 block font-display text-3xl italic text-gold sm:mb-6 sm:text-4xl">
                   {step.number}
                 </span>
                 <h3 className="mb-4 font-display text-xl text-navy">

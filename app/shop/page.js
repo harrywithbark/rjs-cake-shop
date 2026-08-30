@@ -12,7 +12,7 @@ export default function ShopPage() {
     <Suspense
       fallback={
         <main className="min-h-screen bg-cream pt-32">
-          <p className="text-center font-body text-ink/50">Loading cakes…</p>
+          <p className="px-4 text-center font-body text-ink/50">Loading cakes…</p>
         </main>
       }
     >

@@ -16,17 +16,17 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-cream py-24 md:py-28">
-      <div className="mx-auto max-w-content px-6">
+    <section className="bg-cream py-16 md:py-24 lg:py-28">
+      <div className="mx-auto max-w-content px-4 sm:px-6">
         <Reveal>
           <SectionHeading kicker="From our customers" title="Kind words" />
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
+        <div className="mt-10 grid grid-cols-1 gap-8 sm:mt-16 sm:gap-10 md:grid-cols-2 md:gap-16">
           {testimonials.map((review, i) => (
             <Reveal key={review.id} delay={i * 80}>
               <blockquote>
-                <p className="font-display text-2xl italic leading-snug text-navy">
+                <p className="font-display text-xl italic leading-snug text-navy sm:text-2xl">
                   {review.text}
                 </p>
                 <footer className="mt-6 font-body text-xs uppercase tracking-[0.22em] text-ink/50">

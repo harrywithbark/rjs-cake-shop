@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="bg-cream pt-12">
+    <main className="bg-cream pt-[calc(3.5rem+env(safe-area-inset-top))] sm:pt-12">
       <Contact />
     </main>
   );

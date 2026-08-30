@@ -16,7 +16,7 @@ export default function FloatingActionButton() {
 
   return (
     <div
-      className={`fixed bottom-6 right-6 z-50 transition-all duration-500 ${
+      className={`fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom))] right-4 z-50 transition-all duration-500 sm:bottom-6 sm:right-6 ${
         isVisible
           ? "translate-y-0 opacity-100"
           : "pointer-events-none translate-y-8 opacity-0"
@@ -26,7 +26,7 @@ export default function FloatingActionButton() {
         href="https://wa.me/17789184162"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex h-12 w-12 items-center justify-center bg-navy text-cream transition-colors hover:bg-navy/90"
+        className="flex h-14 w-14 items-center justify-center bg-navy text-cream transition-colors hover:bg-navy/90 sm:h-12 sm:w-12"
         aria-label="Message on WhatsApp"
       >
         <svg

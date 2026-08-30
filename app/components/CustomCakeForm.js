@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const inputClass =
-  "w-full border border-navy/15 bg-cream px-4 py-3 font-body text-ink focus:border-navy focus:outline-none";
+  "w-full min-h-12 border border-navy/15 bg-cream px-4 py-3 text-base font-body text-ink focus:border-navy focus:outline-none";
 
 export default function CustomCakeForm({ initialStyle = "" }) {
   const [step, setStep] = useState(1);
@@ -116,30 +116,30 @@ export default function CustomCakeForm({ initialStyle = "" }) {
 
   if (isSubmitted) {
     return (
-      <div className="bg-linen px-8 py-12 text-center">
+      <div className="bg-linen px-5 py-10 text-center sm:px-8 sm:py-12">
         <p className="font-body text-xs uppercase tracking-[0.3em] text-gold">
           Request sent
         </p>
         <div className="mx-auto mt-6 mb-6 h-px w-16 bg-gold" />
-        <h3 className="font-display text-3xl italic text-navy">
+        <h3 className="font-display text-2xl italic text-navy sm:text-3xl">
           We have your details
         </h3>
         <p className="mx-auto mt-4 max-w-md font-body text-ink/70">
           WhatsApp and your mail app should have opened with the enquiry. If
           nothing appeared, message or call us and we will pick up from there.
         </p>
-        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
           <a
             href="https://wa.me/17789184162"
             target="_blank"
             rel="noreferrer"
-            className="bg-navy px-8 py-3 font-body text-sm tracking-wide text-cream hover:bg-navy/90"
+            className="inline-flex min-h-12 items-center justify-center bg-navy px-8 py-3 font-body text-sm tracking-wide text-cream hover:bg-navy/90"
           >
             Message on WhatsApp
           </a>
           <a
             href="tel:+17789184162"
-            className="font-body text-sm text-navy underline decoration-gold/40 underline-offset-4"
+            className="inline-flex min-h-11 items-center justify-center font-body text-sm text-navy underline decoration-gold/40 underline-offset-4"
           >
             Call (778) 918-4162
           </a>
@@ -151,13 +151,13 @@ export default function CustomCakeForm({ initialStyle = "" }) {
   const steps = ["Event", "Cake", "Design", "Contact"];
 
   return (
-    <div className="bg-linen p-6 sm:p-10">
-      <div className="mb-10">
-        <div className="flex justify-between gap-2">
+    <div className="bg-linen p-4 sm:p-6 md:p-10">
+      <div className="mb-8 sm:mb-10">
+        <div className="flex justify-between gap-1 sm:gap-2">
           {steps.map((label, i) => (
             <span
               key={label}
-              className={`font-body text-xs uppercase tracking-[0.18em] ${
+              className={`font-body text-[10px] uppercase tracking-[0.12em] sm:text-xs sm:tracking-[0.18em] ${
                 step >= i + 1 ? "text-navy" : "text-ink/30"
               }`}
             >
@@ -176,7 +176,7 @@ export default function CustomCakeForm({ initialStyle = "" }) {
       <form onSubmit={handleSubmit}>
         {step === 1 && (
           <div className="space-y-6">
-            <h3 className="font-display text-2xl italic text-navy">
+            <h3 className="font-display text-xl italic text-navy sm:text-2xl">
               Tell us about the event
             </h3>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -238,7 +238,7 @@ export default function CustomCakeForm({ initialStyle = "" }) {
 
         {step === 2 && (
           <div className="space-y-6">
-            <h3 className="font-display text-2xl italic text-navy">
+            <h3 className="font-display text-xl italic text-navy sm:text-2xl">
               Build the cake
             </h3>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -314,7 +314,7 @@ export default function CustomCakeForm({ initialStyle = "" }) {
 
         {step === 3 && (
           <div className="space-y-6">
-            <h3 className="font-display text-2xl italic text-navy">
+            <h3 className="font-display text-xl italic text-navy sm:text-2xl">
               Design notes
             </h3>
             <div>
@@ -336,7 +336,7 @@ export default function CustomCakeForm({ initialStyle = "" }) {
 
         {step === 4 && (
           <div className="space-y-6">
-            <h3 className="font-display text-2xl italic text-navy">
+            <h3 className="font-display text-xl italic text-navy sm:text-2xl">
               Your details
             </h3>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -387,12 +387,12 @@ export default function CustomCakeForm({ initialStyle = "" }) {
           <p className="mt-6 font-body text-sm text-navy">{error}</p>
         )}
 
-        <div className="mt-10 flex items-center justify-between border-t border-navy/10 pt-6">
+        <div className="mt-8 flex items-center justify-between gap-3 border-t border-navy/10 pt-5 sm:mt-10 sm:pt-6">
           {step > 1 ? (
             <button
               type="button"
               onClick={handlePrev}
-              className="font-body text-sm text-ink/60 hover:text-navy"
+              className="inline-flex min-h-11 items-center font-body text-sm text-ink/60 hover:text-navy"
             >
               Back
             </button>
@@ -404,14 +404,14 @@ export default function CustomCakeForm({ initialStyle = "" }) {
             <button
               type="button"
               onClick={handleNext}
-              className="bg-navy px-6 py-2.5 font-body text-sm tracking-wide text-cream hover:bg-navy/90"
+              className="inline-flex min-h-11 min-w-[5.5rem] items-center justify-center bg-navy px-6 py-2.5 font-body text-sm tracking-wide text-cream hover:bg-navy/90"
             >
               Next
             </button>
           ) : (
             <button
               type="submit"
-              className="bg-navy px-8 py-2.5 font-body text-sm tracking-wide text-cream hover:bg-navy/90"
+              className="inline-flex min-h-11 items-center justify-center bg-navy px-6 py-2.5 font-body text-sm tracking-wide text-cream hover:bg-navy/90 sm:px-8"
             >
               Submit enquiry
             </button>

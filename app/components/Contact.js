@@ -6,17 +6,17 @@ const WHATSAPP_URL = "https://wa.me/17789184162";
 
 export default function Contact() {
   return (
-    <section id="contact" className="scroll-mt-24 bg-cream py-24 md:py-28">
-      <div className="mx-auto max-w-content px-6">
+    <section id="contact" className="scroll-mt-24 bg-cream py-16 md:py-24 lg:py-28">
+      <div className="mx-auto max-w-content px-4 sm:px-6">
         <Reveal>
           <SectionHeading kicker="Enquire" title="Let's talk about your cake" />
-          <p className="mx-auto mt-6 max-w-xl text-center font-body text-ink/70">
+          <p className="mx-auto mt-5 max-w-xl text-center font-body text-[15px] leading-relaxed text-ink/70 sm:mt-6 sm:text-base">
             Made to order in Surrey. Send a few details or message us on
             WhatsApp &mdash; we will quote from there.
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-12 bg-linen p-6 md:grid-cols-5 md:gap-16 md:p-10 lg:p-14">
+        <div className="mt-10 grid gap-10 bg-linen p-5 sm:mt-14 sm:gap-12 sm:p-6 md:grid-cols-5 md:gap-16 md:p-10 lg:p-14">
           <Reveal className="flex flex-col justify-between gap-10 md:col-span-2">
             <div>
               <p className="font-body text-xs uppercase tracking-[0.25em] text-gold">
@@ -33,7 +33,7 @@ export default function Contact() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-8 inline-flex items-center gap-2.5 bg-navy px-7 py-3.5 font-body text-sm tracking-wide text-cream transition-colors hover:bg-navy/90"
+                className="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-2.5 bg-navy px-7 py-3.5 font-body text-sm tracking-wide text-cream transition-colors hover:bg-navy/90 sm:w-auto"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -53,7 +53,7 @@ export default function Contact() {
                 </p>
                 <a
                   href="tel:+17789184162"
-                  className="mt-2 inline-block font-display text-xl text-navy"
+                  className="mt-2 inline-flex min-h-11 items-center font-display text-xl text-navy"
                 >
                   (778) 918-4162
                 </a>
@@ -66,7 +66,7 @@ export default function Contact() {
                   href="https://www.instagram.com/rjs.cakeshop/"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-2 inline-block font-display text-xl text-navy"
+                  className="mt-2 inline-flex min-h-11 items-center font-display text-xl text-navy"
                 >
                   @rjs.cakeshop
                 </a>

@@ -10,8 +10,11 @@ const meta = [
 
 export default function Hero() {
   return (
-    <section id="top" className="relative bg-cream pb-10 pt-28 lg:pb-12 lg:pt-32">
-      <div className="mx-auto grid max-w-content items-center gap-x-16 gap-y-12 px-6 lg:grid-cols-2">
+    <section
+      id="top"
+      className="relative bg-cream pb-8 pt-[calc(5.5rem+env(safe-area-inset-top))] sm:pb-10 lg:pb-12 lg:pt-32"
+    >
+      <div className="mx-auto grid max-w-content items-center gap-x-16 gap-y-8 px-4 sm:gap-y-12 sm:px-6 lg:grid-cols-2">
         <div className="flex flex-col justify-center">
           <div className="flex items-center gap-4">
             <span
@@ -21,7 +24,7 @@ export default function Hero() {
             />
           </div>
 
-          <h1 className="mt-7 font-display text-[clamp(2.75rem,5.2vw,5rem)] leading-[0.98] tracking-[-0.02em] text-navy">
+          <h1 className="mt-5 font-display text-[clamp(2.15rem,8.4vw,5rem)] leading-[1.05] tracking-[-0.02em] text-navy sm:mt-7 sm:leading-[0.98]">
             <span className="hero-line">
               <span style={{ "--hero-delay": "220ms" }}>Custom cakes,</span>
             </span>
@@ -33,24 +36,24 @@ export default function Hero() {
           </h1>
 
           <p
-            className="hero-anim mt-7 max-w-[46ch] font-body text-[17px] leading-[1.7] text-ink/70 md:text-lg"
+            className="hero-anim mt-5 max-w-[46ch] font-body text-base leading-[1.65] text-ink/70 sm:mt-7 sm:text-[17px] sm:leading-[1.7] md:text-lg"
             style={{ "--hero-delay": "560ms" }}
           >
             Every cake is custom &mdash; designed around your occasion, then
             made to order.
           </p>
 
-          <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
+          <div className="mt-8 flex flex-col items-stretch gap-4 sm:mt-10 sm:flex-row sm:items-center sm:gap-8">
             <Link
               href="/custom-cakes"
-              className="hero-anim bg-navy px-8 py-3.5 font-body text-sm tracking-wide text-cream transition-colors hover:bg-navy/90"
+              className="hero-anim inline-flex min-h-12 items-center justify-center bg-navy px-8 py-3.5 text-center font-body text-sm tracking-wide text-cream transition-colors hover:bg-navy/90"
               style={{ "--hero-delay": "720ms" }}
             >
               Enquire
             </Link>
             <Link
               href="/shop"
-              className="hero-anim font-body text-sm text-navy underline decoration-gold/40 underline-offset-[6px] transition-colors hover:decoration-gold"
+              className="hero-anim inline-flex min-h-11 items-center font-body text-sm text-navy underline decoration-gold/40 underline-offset-[6px] transition-colors hover:decoration-gold"
               style={{ "--hero-delay": "800ms" }}
             >
               View the collection
@@ -59,7 +62,7 @@ export default function Hero() {
         </div>
 
         <div
-          className="hero-frame relative aspect-square w-full overflow-hidden bg-linen"
+          className="hero-frame relative aspect-[4/3] w-full overflow-hidden bg-linen sm:aspect-[5/6] lg:aspect-square"
           style={{ "--hero-delay": "300ms" }}
         >
           <div
@@ -80,12 +83,12 @@ export default function Hero() {
         </div>
 
         <div
-          className="hero-anim border-t border-navy/10 pt-5 lg:col-span-2"
+          className="hero-anim border-t border-navy/10 pt-4 sm:pt-5 lg:col-span-2"
           style={{ "--hero-delay": "900ms" }}
         >
-          <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 font-body text-[11px] uppercase tracking-[0.18em] text-ink/55">
+          <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 font-body text-[10px] uppercase tracking-[0.16em] text-ink/55 sm:gap-x-5 sm:text-[11px] sm:tracking-[0.18em]">
             {meta.map((item, index) => (
-              <li key={item.label} className="flex items-center gap-x-5">
+              <li key={item.label} className="flex items-center gap-x-4 sm:gap-x-5">
                 {index > 0 && (
                   <span aria-hidden="true" className="text-ink/30">
                     &middot;
@@ -96,7 +99,7 @@ export default function Hero() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transition-colors hover:text-navy"
+                    className="inline-flex min-h-11 items-center transition-colors hover:text-navy"
                   >
                     {item.label}
                   </a>

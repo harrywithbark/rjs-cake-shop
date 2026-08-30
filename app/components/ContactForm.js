@@ -5,7 +5,7 @@ import { useState } from "react";
 const WHATSAPP_URL = "https://wa.me/17789184162";
 
 const inputClass =
-  "w-full border border-navy/15 bg-cream px-4 py-3 font-body text-ink placeholder:text-ink/35 focus:border-navy focus:outline-none";
+  "w-full min-h-12 border border-navy/15 bg-cream px-4 py-3 text-base font-body text-ink placeholder:text-ink/35 focus:border-navy focus:outline-none";
 
 function WhatsAppIcon({ className = "h-4 w-4" }) {
   return (
@@ -65,26 +65,26 @@ export default function ContactForm() {
         <p className="font-body text-xs uppercase tracking-[0.3em] text-gold">
           WhatsApp
         </p>
-        <h3 className="mt-4 font-display text-3xl italic text-navy">
+        <h3 className="mt-4 font-display text-2xl italic text-navy sm:text-3xl">
           Your message is ready
         </h3>
-        <p className="mt-4 max-w-md font-body text-ink/70 md:mx-0 mx-auto">
+        <p className="mx-auto mt-4 max-w-md font-body text-ink/70 md:mx-0">
           WhatsApp should have opened with your enquiry. If nothing appeared,
           tap below and we will pick up from there.
         </p>
-        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row md:items-start">
+        <div className="mt-8 flex w-full flex-col items-stretch gap-4 sm:flex-row sm:items-center md:items-start">
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2.5 bg-navy px-8 py-3.5 font-body text-sm tracking-wide text-cream transition-colors hover:bg-navy/90"
+            className="inline-flex min-h-12 items-center justify-center gap-2.5 bg-navy px-8 py-3.5 font-body text-sm tracking-wide text-cream transition-colors hover:bg-navy/90"
           >
             <WhatsAppIcon />
             Message on WhatsApp
           </a>
           <a
             href="tel:+17789184162"
-            className="font-body text-sm text-navy underline decoration-gold/40 underline-offset-4"
+            className="inline-flex min-h-11 items-center justify-center font-body text-sm text-navy underline decoration-gold/40 underline-offset-4"
           >
             Call (778) 918-4162
           </a>
@@ -178,7 +178,7 @@ export default function ContactForm() {
       <div className="mt-2 flex flex-col gap-4 sm:flex-row sm:items-center">
         <button
           type="submit"
-          className="inline-flex items-center justify-center gap-2.5 bg-navy px-8 py-3.5 font-body text-sm tracking-wide text-cream transition-colors hover:bg-navy/90"
+          className="inline-flex min-h-12 w-full items-center justify-center gap-2.5 bg-navy px-8 py-3.5 font-body text-sm tracking-wide text-cream transition-colors hover:bg-navy/90 sm:w-auto"
         >
           <WhatsAppIcon />
           Send on WhatsApp
@@ -187,7 +187,7 @@ export default function ContactForm() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noreferrer"
-          className="font-body text-sm text-navy underline decoration-gold/40 underline-offset-4 hover:decoration-gold"
+          className="inline-flex min-h-11 items-center font-body text-sm text-navy underline decoration-gold/40 underline-offset-4 hover:decoration-gold"
         >
           Or open a blank chat
         </a>

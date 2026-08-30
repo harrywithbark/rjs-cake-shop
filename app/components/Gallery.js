@@ -115,6 +115,13 @@ export default function Gallery() {
 
     const paint = () => {
       frame = 0;
+      if (window.innerWidth < 768) {
+        layerRefs.current.forEach((layer) => {
+          if (layer) layer.style.transform = "";
+        });
+        return;
+      }
+
       const viewCenter = window.innerHeight / 2;
 
       frameRefs.current.forEach((node, i) => {
@@ -152,29 +159,29 @@ export default function Gallery() {
     <section
       id="gallery"
       ref={sectionRef}
-      className={`gallery-section bg-cream py-24 md:py-28${
+      className={`gallery-section bg-cream py-16 md:py-24 lg:py-28${
         viewDriven ? " gallery-view" : ""
       }${entered ? " is-in" : ""}`}
     >
-      <div className="mx-auto max-w-content px-6">
+      <div className="mx-auto max-w-content px-4 sm:px-6">
         <div ref={headingRef} className="mx-auto max-w-2xl text-center">
-          <p className="gallery-kicker mb-6 font-body text-xs uppercase tracking-[0.4em] text-ink/50">
+          <p className="gallery-kicker mb-4 font-body text-[11px] uppercase tracking-[0.28em] text-ink/50 sm:mb-6 sm:text-xs sm:tracking-[0.4em]">
             Selected work
           </p>
           <div
-            className="gallery-rule mx-auto mb-6 h-px w-16 bg-gold"
+            className="gallery-rule mx-auto mb-4 h-px w-16 bg-gold sm:mb-6"
             aria-hidden="true"
           />
-          <h2 className="gallery-title font-display text-4xl italic tracking-wide text-navy md:text-5xl lg:text-6xl">
+          <h2 className="gallery-title text-balance font-display text-[1.85rem] italic leading-tight tracking-wide text-navy sm:text-4xl md:text-5xl lg:text-6xl">
             A peek inside the cake box
           </h2>
-          <p className="gallery-copy mx-auto mt-6 max-w-xl font-body text-ink/70">
+          <p className="gallery-copy mx-auto mt-5 max-w-xl font-body text-[15px] leading-relaxed text-ink/70 sm:mt-6 sm:text-base">
             A few of the styles we love to make. Follow{" "}
             <a
               href="https://www.instagram.com/rjs.cakeshop/"
               target="_blank"
               rel="noreferrer"
-              className="text-navy underline decoration-gold/40 underline-offset-4 hover:decoration-gold"
+              className="inline-flex min-h-11 items-center text-navy underline decoration-gold/40 underline-offset-4 hover:decoration-gold"
             >
               @rjs.cakeshop
             </a>{" "}
@@ -182,14 +189,14 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+        <div className="mt-10 grid grid-cols-2 gap-2 sm:mt-14 sm:gap-3 md:grid-cols-4 md:gap-4">
           {photos.map((photo, i) => (
             <div key={photo.src} className={photo.className}>
               <div
                 ref={(node) => {
                   frameRefs.current[i] = node;
                 }}
-                className={`gallery-frame gallery-wipe-${photo.wipe} relative h-full min-h-[180px] w-full overflow-hidden`}
+                className={`gallery-frame gallery-wipe-${photo.wipe} relative h-full w-full overflow-hidden`}
                 style={{ "--gallery-delay": `${photo.delay}ms` }}
               >
                 <div

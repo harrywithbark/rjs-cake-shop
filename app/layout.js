@@ -19,6 +19,15 @@ const jost = Jost({
   display: "swap",
 });
 
+export function generateViewport() {
+  return {
+    width: "device-width",
+    initialScale: 1,
+    viewportFit: "cover",
+    themeColor: "#F5EBD9",
+  };
+}
+
 export const metadata = {
   metadataBase: new URL("https://rjscakeshop.vercel.app"),
   title: "Rj's Cake Shop | Custom Cakes in Surrey, BC",
@@ -46,7 +55,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${jost.variable}`}>
-      <body className="font-body bg-cream text-ink">
+      <body className="font-body bg-cream text-ink antialiased">
         <Header />
         {children}
         <Footer />

@@ -30,7 +30,7 @@ export default function FAQ() {
 
   return (
     <div className="mx-auto max-w-3xl">
-      <h2 className="mb-10 text-center font-display text-4xl italic text-navy md:text-5xl">
+      <h2 className="mb-8 text-balance text-center font-display text-[1.85rem] italic text-navy sm:mb-10 sm:text-4xl md:text-5xl">
         Questions
       </h2>
       <div className="divide-y divide-navy/10 border-y border-navy/10">
@@ -41,21 +41,21 @@ export default function FAQ() {
               <button
                 type="button"
                 onClick={() => setOpenIndex(open ? null : index)}
-                className="flex w-full items-center justify-between py-5 text-left"
+                className="flex min-h-14 w-full items-start justify-between gap-4 py-4 text-left sm:items-center sm:py-5"
               >
-                <span className="font-display text-lg text-navy">
+                <span className="font-display text-base leading-snug text-navy sm:text-lg">
                   {faq.question}
                 </span>
-                <span className="ml-4 font-body text-gold">
+                <span className="mt-0.5 shrink-0 font-body text-gold sm:mt-0">
                   {open ? "–" : "+"}
                 </span>
               </button>
               <div
                 className={`overflow-hidden transition-all duration-300 ${
-                  open ? "max-h-48 pb-5 opacity-100" : "max-h-0 opacity-0"
+                  open ? "max-h-56 pb-5 opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <p className="font-body leading-relaxed text-ink/70">
+                <p className="font-body text-[15px] leading-relaxed text-ink/70 sm:text-base">
                   {faq.answer}
                 </p>
               </div>
